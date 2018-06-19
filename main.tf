@@ -2,7 +2,7 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-resource "aws_instance" "example" {
+resource "aws_launch_configuration" "example" {
   ami = "ami-58d7e821"
   instance_type = "t1.micro"
 
