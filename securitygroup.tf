@@ -10,5 +10,14 @@ resource "aws_security_group" "instance" {
   lifecycle {
     create_before_destroy = true
   }
+}
 
+resource "aws_security_group" "elb" {
+  name = "terraform-example-elb"
+  ingress {
+    from_port = 80
+    to_port = 80
+    protocol = "tcp"
+    cidr_blocks = ["82.15.223.149/32"]
+  }
 }
