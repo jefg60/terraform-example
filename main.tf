@@ -17,4 +17,9 @@ resource "aws_instance" "example" {
   tags {
     Name = "terraform-example"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
 }
