@@ -1,5 +1,6 @@
 resource "aws_elb" "example" {
   name = "terraform-asg-example"
+  #This only works in a VPC
   #security_groups = ["${aws_security_group.elb.id}"]
   availability_zones = ["${data.aws_availability_zones.all.names}"]
   health_check {
