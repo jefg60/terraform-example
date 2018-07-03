@@ -6,8 +6,9 @@ resource "aws_launch_configuration" "example" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World" > index.html
-              nohup busybox httpd -f -p ${var.server_port} &
+              sudo apt-get update
+              sudo apt-get -y install nginx
+              echo "Hello, World" > /var/www/html/index.html
               EOF
 
   lifecycle {
